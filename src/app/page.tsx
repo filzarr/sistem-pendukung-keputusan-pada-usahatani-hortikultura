@@ -12,7 +12,7 @@ export default function Home() {
       </div>
     </div>
     <div className=" overflow-hidden h-[359px] rounded">
-      <Image src={'/bg-1.jpg'} width={702} height={50} className=' object-contain object-center' />
+      <Image alt='Gambar Pohon Tomat' src={'/bg-1.jpg'} width={702} height={50} className=' object-contain object-center' />
     </div>
   </main>
   )
