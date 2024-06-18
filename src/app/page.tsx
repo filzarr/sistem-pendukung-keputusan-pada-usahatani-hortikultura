@@ -11,8 +11,13 @@ export default function Home() {
         <button className='p-[12px] text-white font-bold bg-[#65B741] rounded'>Contact US</button>
       </div>
     </div>
-    <div className=" overflow-hidden h-[359px] rounded">
-      <Image alt='Gambar Pohon Tomat' src={'/bg-1.jpg'} width={702} height={50} className=' object-contain object-center' />
+    <div className=" overflow-hidden grid grid-cols-2   h-[359px] rounded">
+      <div className="relative ">
+        <Image alt='Gambar Pohon Tomat' src={'/bg-1.jpg'}fill className=' object-contain object-center' />
+      </div>
+      <div className="relative ">
+        <Image alt='Gambar Pohon Tomat' src={'/gambar-cabe.jpg'}fill className=' object-contain object-center' />
+      </div>
     </div>
   </main>
   )
