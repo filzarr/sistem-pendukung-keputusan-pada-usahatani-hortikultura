@@ -12,7 +12,7 @@ const Rincian = () => {
       </header>
       <Accordion collapseAll>
         <Accordion.Panel>
-          <Accordion.Title>Tomat</Accordion.Title>
+          <Accordion.Title className="p-5">Tomat</Accordion.Title>
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               Luas lahan penanaman = 6000 m2
