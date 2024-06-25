@@ -55,13 +55,13 @@ const Spk = () => {
   };
 
   return (
-    <div className="px-[128px] py-[64px] space-y-8">
+    <div className="px-[32px] md:px-[64px]  py-[64px] space-y-8">
       <header>
         <p className="text-center text-3xl font-bold text-[#65B741]">
           ANALISIS
         </p>
       </header>
-      <form onSubmit={formSubmit} className="grid grid-cols-2 gap-8">
+      <form onSubmit={formSubmit} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="">
           <label
             htmlFor="jenis"
@@ -106,7 +106,7 @@ const Spk = () => {
             <p className="text-red-500 text-xs mt-1">*{errors.massa}</p>
           )}
         </div>
-        <div className="col-span-2">
+        <div className="lg:col-span-2">
           <button
             className="w-full py-2 rounded font-semibold text-white bg-[#65B741]"
             type="submit"

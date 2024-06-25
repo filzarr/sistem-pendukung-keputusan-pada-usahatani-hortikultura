@@ -59,7 +59,7 @@ const dataSpk: SPK[] = [
             judul: "IRR",
             harga: "46.64%",
             deskripsi:
-            "nilai IRR sebesar 46.64 % yang artinya keuntungan dari penanaman ini akan memberikan keuntungan lebih besar dibanding menyimpan  uang di Bank dengan suku bung a 6%"
+            "nilai IRR sebesar 46.64 % yang artinya keuntungan dari penanaman ini akan memberikan keuntungan lebih besar dibanding menyimpan  uang di Bank dengan suku bunga 6%"
         },
         {
             judul: "NET B/C ",

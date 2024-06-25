@@ -4,7 +4,7 @@ import React from "react";
 
 const Rincian = () => {
   return (
-    <div className="px-[128px] py-[64px] space-y-8">
+    <div className=" px-[32px] md:px-[64px] lg:px-[128px]   py-[64px] space-y-8">
       <header>
         <p className="text-center  text-3xl font-bold text-[#65B741]">
           Rincian Biaya
