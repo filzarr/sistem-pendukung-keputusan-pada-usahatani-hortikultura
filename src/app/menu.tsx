@@ -9,8 +9,7 @@ interface NavbarItem {
     { label: "Home", url: "/" },
     { label: "Tentang Kami", url: "/about" },
     { label: "Rincian Biaya", url: "/rincian-biaya" },
-    { label: "SPK", url: "/spk"},
-    { label: "Contact", url:"/contact-us"}
+    { label: "SPK", url: "/spk"} 
     
   ];
 
