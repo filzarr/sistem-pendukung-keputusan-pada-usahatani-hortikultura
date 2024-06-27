@@ -42,7 +42,7 @@ export default function Home() {
             untuk meningkatkan produktivitas serta kualitas hasil tani Anda.
           </p>
           <div className="flex justify-center">
-          <Link href={'/about'} className='p-[12px] px-[24px] text-white font-bold bg-[#65B741] rounded'>Contact US</Link>
+          <Link href={'/about'} className='p-[12px] px-[24px] text-white font-bold bg-[#65B741] rounded'>Get Started</Link>
           </div>
         </div>
       </div>
