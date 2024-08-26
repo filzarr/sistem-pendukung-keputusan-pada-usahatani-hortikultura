@@ -14,6 +14,9 @@ const Spk = () => {
   });
   const [errors, setErrors] = useState<Partial<IFormInput>>({});
   const [isLoading, setIsLoading] = useState(false);
+  const [Massa, setMassa] = useState<number>(0);
+  const [Jenis, setJenis] = useState('');
+
   const [data, setData] = useState('');
 
   const validate = (data: IFormInput) => {
@@ -28,7 +31,7 @@ const Spk = () => {
     setFormData({
       ...formData,
       [name]: value,
-    });
+    }); 
   };
 
   const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,6 +44,10 @@ const Spk = () => {
       setIsLoading(false);
     } else {
         setErrors({});
+    // console.log(Jenis)
+
+        setMassa(parseInt(formData.massa));
+        setJenis(formData.jenis);
       if (formData.jenis === "tomat" && formData.massa === "5") {
         setData('0');
       } else if (formData.jenis === "tomat" && formData.massa === "10") {
@@ -50,10 +57,12 @@ const Spk = () => {
       } else if (formData.jenis === "cabai-merah" && formData.massa === "10") {
         setData('3');
       }
+      else{
+        setData('5')
+      }
       setIsLoading(false);
     }
   };
-
   return (
     <div className="px-[32px] md:px-[64px]  py-[64px] space-y-8">
       <header>
@@ -99,7 +108,15 @@ const Spk = () => {
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             <option value="">Pilih Massa Ekonomi Usaha</option>
+            <option value="1">1 Tahun</option>
+            <option value="2">2 Tahun</option>
+            <option value="3">3 Tahun</option>
+            <option value="4">4 Tahun</option>
             <option value="5">5 Tahun</option>
+            <option value="6">6 Tahun</option>
+            <option value="7">7 Tahun</option>
+            <option value="8">8 Tahun</option>
+            <option value="9">9 Tahun</option>
             <option value="10">10 Tahun</option>
           </select>
           {errors.massa && (
@@ -115,7 +132,7 @@ const Spk = () => {
           </button>
         </div>
       </form>
-      {data !== '' && <Result jenis={data} />}
+      {data !== '' && <Result jenis={Jenis} massa={Massa}  />}
     </div>
   );
 };
