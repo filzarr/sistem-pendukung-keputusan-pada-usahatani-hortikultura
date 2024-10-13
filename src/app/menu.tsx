@@ -8,7 +8,7 @@ interface NavbarItem {
   const navbarItems: NavbarItem[] = [
     { label: "Home", url: "/" },
     { label: "Tentang Kami", url: "/about" },
-    { label: "Rincian Biaya", url: "/rincian-biaya" },
+    // { label: "Rincian Biaya", url: "/rincian-biaya" },
     { label: "SPK", url: "/spk"} 
     
   ];
