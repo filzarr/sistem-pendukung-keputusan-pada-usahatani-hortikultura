@@ -15,31 +15,31 @@ interface Data {
   luaslahan: number;
   periode: number;
   bulan: number;
+  investasi: number;
+  arusKas: number[];
 }
 interface ResultProps {
   data: Data;
 }
 const Result: React.FC<ResultProps> = ({ data }) => {
 
-  console.log(data);
-  const [hasil,setHasil] = useState(false);
+  const [hasil, setHasil] = useState(false);
   const handleRugiChange = (newRugi: boolean) => {
     setHasil(newRugi);
     console.log(hasil);
-    
+
   };
   // useEffect(() => {
   //   console.log("massa atau jenis berubah:", massa, jenis);
   // }, [massa, jenis]);
   return (
-    <>
-      {data.jenis === 'tomat'  ? <Tabletomat bulan={data.bulan} periode={data.periode} luas={data.luaslahan} harga={data.harga} /> : <Tablecabe bulan={data.bulan} periode={data.periode} luas={data.luaslahan} harga={data.harga} />}
+    <> 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Nvp onRugiChange={handleRugiChange} bulan={data.bulan} jenis={data.jenis} massa={data.massa} harga={data.harga} sewa={data.sewa} luaslahan={data.luaslahan} periode={data.periode} />
-      <Bep sewa={data.sewa} harga={data.harga} />
-      <Bc sewa={data.sewa} bulan={data.bulan} harga={data.harga} periode={data.periode} luaslahan={data.luaslahan} />
-      <Pbp bulan={data.bulan} jenis={data.jenis} massa={data.massa} harga={data.harga} sewa={data.sewa} luaslahan={data.luaslahan} periode={data.periode} />
-      <Hasilnya hasil={hasil} />
+        <Nvp investasi={data.investasi} onRugiChange={handleRugiChange} arusKas={data.arusKas} bulan={data.bulan}  jenis={data.jenis} massa={data.massa} harga={data.harga} sewa={data.sewa} luaslahan={data.luaslahan} periode={data.periode} />
+        <Bep sewa={data.sewa} harga={data.harga} />
+        <Bc sewa={data.sewa} bulan={data.bulan} harga={data.harga} periode={data.periode} luaslahan={data.luaslahan} />
+        <Pbp bulan={data.bulan} jenis={data.jenis} massa={data.massa} harga={data.harga} sewa={data.sewa} luaslahan={data.luaslahan} periode={data.periode} />
+        <Hasilnya hasil={hasil} />
       </div>
     </>
   );

@@ -10,6 +10,8 @@ interface IFormInput {
   luaslahan: number;
   periode: number;
   bulan: number;
+  investasi: number;
+  arusKas: number[];
 }
 
 const Spk = () => {
@@ -21,6 +23,8 @@ const Spk = () => {
     luaslahan: 0,
     periode: 0,
     bulan: 0,
+    arusKas: [], 
+    investasi: 0,
   });
   const [errors, setErrors] = useState<Partial<IFormInput>>({});
   const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +54,22 @@ const Spk = () => {
       [name]: value,
     });// Validasi input sebagai number atau kosong
   };
-
+  const handleMassaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value, 10) || 0;
+    setFormData({
+      ...formData,
+      massa: value,
+      arusKas: Array(value).fill(0), // Setel arusKas menjadi array dengan panjang sesuai massa
+    });
+  };
+  const handleArusKasChange = (index: number, value: number) => {
+    const newArusKas = [...formData.arusKas];
+    newArusKas[index] = value;
+    setFormData({
+      ...formData,
+      arusKas: newArusKas,
+    });
+  };
   const formSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
@@ -105,9 +124,21 @@ const Spk = () => {
           >
             Massa Ekonomi Usaha
           </label>
-          <input type="number" onChange={handleInputChange} id="massa"  value={formData.massa}  name="massa" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required /> 
+          <input type="number" onChange={handleMassaChange} id="massa"  value={formData.massa}  name="massa" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required /> 
           {errors.massa && (
             <p className="text-red-500 text-xs mt-1">*{errors.massa}</p>
+          )}
+        </div>
+        <div className="">
+          <label
+            htmlFor="investasi"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >
+            Model Investasi Awal
+          </label>
+          <input type="number" onChange={handleInputChange} id="investasi"  value={formData.investasi}  name="investasi" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required /> 
+          {errors.investasi && (
+            <p className="text-red-500 text-xs mt-1">*{errors.investasi}</p>
           )}
         </div>
         <div className="">
@@ -170,6 +201,21 @@ const Spk = () => {
             <p className="text-red-500 text-xs mt-1">*{errors.bulan}</p>
           )}
         </div>
+        {formData.arusKas.map((arus, index) => (
+          <div key={index}>
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+              Arus Kas Pada Tahun Ke-{index + 1}
+            </label>
+            <input
+              type="number"
+              value={arus}
+              onChange={(e) => handleArusKasChange(index, parseInt(e.target.value) || 0)}
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=" "
+              required
+            />
+          </div>
+        ))}
         <div className="lg:col-span-2">
           <button onClick={() =>{setClick(true)} }
             className="w-full py-2 rounded font-semibold text-white bg-[#65B741]"
