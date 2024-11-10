@@ -12,7 +12,7 @@ const Bc: React.FC<BcProps> = ({ harga,luaslahan,sewa, bulan, periode}) => {
     const [bc, setBc] = useState(0);
     useEffect(() => { 
       const ab = (12 - bulan + 1 ) / periode;  
-      const a = Number(harga) * Number(luaslahan) * Number(ab);
+      const a = Number(harga) * Number(luaslahan) * 4;
       const b = Number(sewa) + 9995000;
       const c = a/b;
       setBc(c)

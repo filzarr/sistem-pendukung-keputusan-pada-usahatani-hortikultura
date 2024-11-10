@@ -27,7 +27,7 @@ const Nvp: React.FC<NvpProps> = ({ jenis, massa, harga, sewa, luaslahan, periode
     const ab = (12 - bulan + 2) / periode;
     console.log(ab.toFixed(0));
     if (jenis === 'tomat') {
-      setA(Number(harga) * Number(luaslahan) * Number(ab.toFixed(0) + 1));
+      setA(Number(harga) * Number(luaslahan) * 4);
       setB(Number(sewa) + Number(9995000));
 
     } else {

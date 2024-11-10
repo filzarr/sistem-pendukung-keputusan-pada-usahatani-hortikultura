@@ -141,14 +141,14 @@ const Spk = () => {
             <p className="text-red-500 text-xs mt-1">*{errors.investasi}</p>
           )}
         </div>
-        <div className="">
+        <div className="hidden">
           <label
             htmlFor="periode"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Periode Panen Per Tahun
           </label>
-          <input type="number" onChange={handleInputChange} id="periode"  value={formData.periode}  name="periode" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required /> 
+          <input type="hidden" onChange={handleInputChange} id="periode"  value={formData.periode}  name="periode" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required /> 
           {errors.periode && (
             <p className="text-red-500 text-xs mt-1">*{errors.periode}</p>
           )}
@@ -189,14 +189,14 @@ const Spk = () => {
             <p className="text-red-500 text-xs mt-1">*{errors.sewa}</p>
           )}
         </div>
-        <div className="">
+        <div className="hidden">
           <label
             htmlFor="bulan"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Mulai Panen Pada Bulan Ke-
           </label>
-          <input type="number" onChange={handleInputChange} id="bulan"  value={formData.bulan}  name="bulan" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required /> 
+          <input type="hidden" onChange={handleInputChange} id="bulan"  value={formData.bulan}  name="bulan" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required /> 
           {errors.bulan && (
             <p className="text-red-500 text-xs mt-1">*{errors.bulan}</p>
           )}
